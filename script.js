@@ -1,5 +1,11 @@
-function computerPlay(r,p,s){
-  console.log(r || p || s)
+function computerPlay(plays){
+  
+
+  let randomPlay = plays[Math.floor(Math.random()*plays.length)]
+  console.log(randomPlay)
+
+  
 }
 
-computerPlay("rock", "paper", "scissor")
+computerPlay(["Rock", "Paper", "Scissor"])
+
