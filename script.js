@@ -1,24 +1,29 @@
 function computerPlay(plays){
   //array acting as paramater for function
-  
+
+
   //print out random string in console
-  console.log("Computer Selection: " + randomPlay)
+  //return to avoid undefined
+  return randomPlay
 }
 
 //take out of function for the other function to gain access
 
 //array of options
-let plays =["rock", "paper" ,"scissors"]
-
+const plays =["rock", "paper" ,"scissors"]
 //random string from array
-let randomPlay = plays[Math.floor(Math.random()*plays.length)]
+  const randomPlay = plays[Math.floor(Math.random()*plays.length)]
 
 function playRound(playerSelection, computerSelection){
-  if (computerSelection == "rock" && playerSelection == "rock"){
-    return "Oop"
+  if (computerSelection==="scissors" && playerSelection==="rock"){
+    return "hello"
   }
+
+  
 }
 
 const playerSelection = "rock";
-const computerSelection = computerPlay();
+const computerSelection = computerPlay(plays);
+console.log("Computer Selection: " + randomPlay)
+console.
 console.log(playRound(playerSelection, computerSelection));
