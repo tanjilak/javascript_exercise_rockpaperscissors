@@ -1,6 +1,5 @@
-function computerPlay(plays){
+function computerPlay(){
   //array acting as paramater for function
-
 
   //print out random string in console
   //return to avoid undefined
@@ -12,22 +11,30 @@ function computerPlay(plays){
 //array of options
 const plays =["rock", "paper" ,"scissors"]
 //random string from array
-  const randomPlay = plays[Math.floor(Math.random()*plays.length)]
+const randomPlay = plays[Math.floor(Math.random()*plays.length)]
+
+function game(){
+  for (let i=0; i<5; i++){
+    playRound();
+  }
+}
 
 function playRound(playerSelection, computerSelection){
-  if (computerSelection==="scissors" && playerSelection==="rock"){
-    return "Congrats, you win! Rock beats Scissors"
-  }else if (computerSelection==="paper" && playerSelection==="rock"){
-    return "Sorry, you lose! Paper beats Rock"
+  //game results
+  if (computerSelection==="scissors" && playerSelection==="rock" || computerSelection==="paper" && playerSelection==="scissors" || computerSelection==="rock" && playerSelection==="paper"){
+    return "Congrats, you win!"
+  }else if (computerSelection==="paper" && playerSelection==="rock" || computerSelection==="scissors" && playerSelection==="paper" || computerSelection==="rock" && playerSelection==="scissors"){
+    return "Sorry, you lose!"
   }else if (computerSelection===playerSelection){
     return "Oops! That's a tie"
   }
+  }
 
-  
-}
 
-const playerSelection = "rock";
+const playerSelection = prompt("Pick rock, paper, or scissors")
 const computerSelection = computerPlay(plays);
+
 console.log("Computer Selection: " + randomPlay)
 console.log("Player Selection: " + playerSelection)
 console.log(playRound(playerSelection, computerSelection));
+
