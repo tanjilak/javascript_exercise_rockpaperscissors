@@ -7,7 +7,7 @@ function computerPlay(){
 
   //print out random string in console
   //return to avoid undefined
-  return randomPlay
+    return randomPlay
 }
 
 //take out of function for the other function to gain access
@@ -26,20 +26,20 @@ function playRound(playerSelection, computerSelection){
       || computerSelection==="rock" && playerSelection==="paper"){
 
     //increment player score if win
-    player++
-    return "Congrats, you win!"
+      player++
+      return "Congrats, you win!"
     
-  }else if (computerSelection==="paper" && playerSelection==="rock" 
+  } else if (computerSelection==="paper" && playerSelection==="rock" 
             || computerSelection==="scissor" && playerSelection==="paper" 
             || computerSelection==="rock" && playerSelection==="scissor"){
 
     //increment computer score if win
-    computer++
-    return "Sorry, you lose!"
+      computer++
+      return "Sorry, you lose!"
     
-  }else if (computerSelection===playerSelection){
+  } else if (computerSelection===playerSelection){
     //no increment if scored equally
-    return "Oops! That's a tie"
+      return "Oops! That's a tie"
   }
   }
 
@@ -47,24 +47,27 @@ function playRound(playerSelection, computerSelection){
 function game(){
   for (let i=0; i<5; i++){
 
-  //loop game 5 times 
-  const playerSelection = prompt("Pick rock, paper, or scissor")
-  const computerSelection = computerPlay(plays);
-  
-  console.log("Computer Selection: " + randomPlay)
-  console.log("Player Selection: " + playerSelection)
-  
-  console.log(playRound(playerSelection, computerSelection))
-  console.log("---------------------")
+    //loop game 5 times 
+    const playerSelection = prompt("Pick rock, paper, or scissor")
+    const computerSelection = computerPlay(plays);
+    
+    console.log("Computer Selection: " + randomPlay)
+    console.log("Player Selection: " + playerSelection)
+    
+    console.log(playRound(playerSelection, computerSelection))
+    console.log("Player score: " + player)
+    console.log("Computer score: " +computer)
+    console.log("---------------------")
+
   }
 
   //result messages of scores
   if (player === computer){
-    return "Tie!"
-  }else if (player < computer){
-    return "You Lose!"
-  }else if (player > computer){
-    return "You Win!"
+      return "Tie!"
+  } else if (player < computer){
+      return "You Lose!"
+  } else if (player > computer){
+      return "You Win!"
   }
 }
 
