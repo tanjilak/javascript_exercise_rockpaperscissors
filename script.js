@@ -1,3 +1,6 @@
+let player=0;
+let computer=0;
+
 function computerPlay(){
   //array acting as paramater for function
 
@@ -9,7 +12,7 @@ function computerPlay(){
 //take out of function for the other function to gain access
 
 //array of options
-const plays =["rock", "paper" ,"scissors"]
+const plays =["rock", "paper" ,"scissor"]
 //random string from array
 const randomPlay = plays[Math.floor(Math.random()*plays.length)]
 
@@ -17,10 +20,20 @@ const randomPlay = plays[Math.floor(Math.random()*plays.length)]
 
 function playRound(playerSelection, computerSelection){
   //game results
-  if (computerSelection==="scissors" && playerSelection==="rock" || computerSelection==="paper" && playerSelection==="scissors" || computerSelection==="rock" && playerSelection==="paper"){
+  if (computerSelection==="scissor" && playerSelection==="rock"
+      || computerSelection==="paper" && playerSelection==="scissor" 
+      || computerSelection==="rock" && playerSelection==="paper"){
+    
+    player++
     return "Congrats, you win!"
-  }else if (computerSelection==="paper" && playerSelection==="rock" || computerSelection==="scissors" && playerSelection==="paper" || computerSelection==="rock" && playerSelection==="scissors"){
+    
+  }else if (computerSelection==="paper" && playerSelection==="rock" 
+            || computerSelection==="scissor" && playerSelection==="paper" 
+            || computerSelection==="rock" && playerSelection==="scissor"){
+    
+    computer++
     return "Sorry, you lose!"
+    
   }else if (computerSelection===playerSelection){
     return "Oops! That's a tie"
   }
@@ -31,7 +44,7 @@ function playRound(playerSelection, computerSelection){
 function game(){
   for (let i=0; i<5; i++){
     
-  const playerSelection = prompt("Pick rock, paper, or scissors")
+  const playerSelection = prompt("Pick rock, paper, or scissor")
   const computerSelection = computerPlay(plays);
   
   console.log("Computer Selection: " + randomPlay)
@@ -39,10 +52,15 @@ function game(){
   
   console.log(playRound(playerSelection, computerSelection))
   console.log("---------------------")
-    
-
   }
-  return 
+
+  if (player === computer){
+    return "Tie!"
+  }else if (player < computer){
+    return "You Lose!"
+  }else if (player > computer){
+    return "You Win!"
+  }
 }
 
 console.log(game())
