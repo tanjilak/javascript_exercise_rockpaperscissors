@@ -1,3 +1,4 @@
+//score initially 0
 let player=0;
 let computer=0;
 
@@ -23,27 +24,30 @@ function playRound(playerSelection, computerSelection){
   if (computerSelection==="scissor" && playerSelection==="rock"
       || computerSelection==="paper" && playerSelection==="scissor" 
       || computerSelection==="rock" && playerSelection==="paper"){
-    
+
+    //increment player score if win
     player++
     return "Congrats, you win!"
     
   }else if (computerSelection==="paper" && playerSelection==="rock" 
             || computerSelection==="scissor" && playerSelection==="paper" 
             || computerSelection==="rock" && playerSelection==="scissor"){
-    
+
+    //increment computer score if win
     computer++
     return "Sorry, you lose!"
     
   }else if (computerSelection===playerSelection){
+    //no increment if scored equally
     return "Oops! That's a tie"
   }
   }
 
 
-
 function game(){
   for (let i=0; i<5; i++){
-    
+
+  //loop game 5 times 
   const playerSelection = prompt("Pick rock, paper, or scissor")
   const computerSelection = computerPlay(plays);
   
@@ -54,6 +58,7 @@ function game(){
   console.log("---------------------")
   }
 
+  //result messages of scores
   if (player === computer){
     return "Tie!"
   }else if (player < computer){
@@ -63,4 +68,5 @@ function game(){
   }
 }
 
+//output game function to console
 console.log(game())
