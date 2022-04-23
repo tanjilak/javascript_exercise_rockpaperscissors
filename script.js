@@ -13,11 +13,7 @@ const plays =["rock", "paper" ,"scissors"]
 //random string from array
 const randomPlay = plays[Math.floor(Math.random()*plays.length)]
 
-function game(){
-  for (let i=0; i<5; i++){
-    playRound();
-  }
-}
+
 
 function playRound(playerSelection, computerSelection){
   //game results
@@ -31,10 +27,22 @@ function playRound(playerSelection, computerSelection){
   }
 
 
-const playerSelection = prompt("Pick rock, paper, or scissors")
-const computerSelection = computerPlay(plays);
 
-console.log("Computer Selection: " + randomPlay)
-console.log("Player Selection: " + playerSelection)
-console.log(playRound(playerSelection, computerSelection));
+function game(){
+  for (let i=0; i<5; i++){
+    
+  const playerSelection = prompt("Pick rock, paper, or scissors")
+  const computerSelection = computerPlay(plays);
+  
+  console.log("Computer Selection: " + randomPlay)
+  console.log("Player Selection: " + playerSelection)
+  
+  console.log(playRound(playerSelection, computerSelection))
+  console.log("---------------------")
+    
 
+  }
+  return 
+}
+
+console.log(game())
