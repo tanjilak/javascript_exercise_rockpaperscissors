@@ -16,7 +16,11 @@ const plays =["rock", "paper" ,"scissors"]
 
 function playRound(playerSelection, computerSelection){
   if (computerSelection==="scissors" && playerSelection==="rock"){
-    return "hello"
+    return "Congrats, you win! Rock beats Scissors"
+  }else if (computerSelection==="paper" && playerSelection==="rock"){
+    return "Sorry, you lose! Paper beats Rock"
+  }else if (computerSelection===playerSelection){
+    return "Oops! That's a tie"
   }
 
   
@@ -25,5 +29,5 @@ function playRound(playerSelection, computerSelection){
 const playerSelection = "rock";
 const computerSelection = computerPlay(plays);
 console.log("Computer Selection: " + randomPlay)
-console.
+console.log("Player Selection: " + playerSelection)
 console.log(playRound(playerSelection, computerSelection));
